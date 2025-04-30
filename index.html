@@ -123,7 +123,7 @@
 					<input type="tel" name="Phone number" placeholder="Your Phone*" required>
 					<input type="text" name="Message" placeholder="Your Message*" required>
 					<button type="submit">Enquire Now</button>
-				  </form>
+				</form>
 				<div class="consent-box">
 					<input type="checkbox" id="consent" checked disabled>
 					<label for="consent">
@@ -243,7 +243,7 @@
 						<li>➝ Ashwini Hospital – 0.4 Km</li>
 						<li>➝ Near Bardi Petroleum 74JV+2PX</li>
 					</ul>
-					<a href="#" class="btn btn-danger fw-bold mt-4" style="margin-top: 1rem;">Download Brochure</a>
+					<button class="interested-btn">Download Brochure</button>
 				</div>
 			</div>
 		</div>
@@ -324,7 +324,7 @@
 				<div class="col-md-4 mb-4">
 					<div class="floor-plan-card">
 						<img src="/assets/images/floor-plan/plan1.png" alt="2 BHK Homes" class="img-fluid rounded">
-						<a href="#" class="btn btn-danger mt-3">View Plan</a>
+						<button class="interested-btn" style="font-weight: bold;">View Plan</button>
 						<p class="mt-2 fw-medium">2 BHK Homes</p>
 					</div>
 				</div>
@@ -333,7 +333,7 @@
 				<div class="col-md-4 mb-4">
 					<div class="floor-plan-card">
 						<img src="/assets/images/floor-plan/plan1.png" alt="3 BHK Homes" class="img-fluid rounded">
-						<a href="#" class="btn btn-danger mt-3">View Plan</a>
+						<button class="interested-btn" style="font-weight: bold;">View Plan</button>
 						<p class="mt-2 fw-medium">3 BHK Homes</p>
 					</div>
 				</div>
@@ -342,7 +342,7 @@
 				<div class="col-md-4 mb-4">
 					<div class="floor-plan-card">
 						<img src="/assets/images/floor-plan/plan1.png" alt="4 BHK Homes" class="img-fluid rounded">
-						<a href="#" class="btn btn-danger mt-3">View Plan</a>
+						<button class="interested-btn" style="font-weight: bold;">View Plan</button>
 						<p class="mt-2 fw-medium">4 & 4.5 BHK Homes</p>
 					</div>
 				</div>
@@ -435,10 +435,10 @@
 				skills
 				to provide their clients with an optimal living experience.
 			</p>
-			<a href="#enquire" class="btn btn-danger btn-lg">Enquire Now</a>
+			<a class="btn btn-danger btn-lg interested-btn">Enquire Now</a>
 		</div>
 	</section>
-	>
+
 
 	<!--footer start-->
 	<footer id="footer" class="footer">
@@ -513,33 +513,35 @@
 				<!-- Contact Form - Updated for proper Google Forms submission -->
 				<form action="https://sheetdb.io/api/v1/g2b68ikbx5ybs" method="POST" id="contactForm">
 					<div class="row">
-					  <div class="col-md-6">
-						<input type="text" name="data[Name]" class="form-control" placeholder="Your Name*" required>
-					  </div>
-					  <div class="col-md-6">
-						<input type="tel" name="data[Phone number]" class="form-control" placeholder="Your Mobile Number*" required>
-					  </div>
+						<div class="col-md-6">
+							<input type="text" name="data[Name]" class="form-control" placeholder="Your Name*" required>
+						</div>
+						<div class="col-md-6">
+							<input type="tel" name="data[Phone number]" class="form-control"
+								placeholder="Your Mobile Number*" required>
+						</div>
 					</div>
-				  
+
 					<div class="row mt-3">
-					  <div class="col-md-6">
-						<input type="email" name="data[Email]" class="form-control" placeholder="Your Email Address*" required>
-					  </div>
-					  <div class="col-md-6">
-						<input type="text" name="data[Message]" class="form-control" placeholder="Message*">
-					  </div>
+						<div class="col-md-6">
+							<input type="email" name="data[Email]" class="form-control"
+								placeholder="Your Email Address*" required>
+						</div>
+						<div class="col-md-6">
+							<input type="text" name="data[Message]" class="form-control" placeholder="Message*">
+						</div>
 					</div>
-				  
+
 					<div class="form-check mb-3 mt-3">
-					  <input class="form-check-input" type="checkbox" id="consentCheck" checked disabled>
-					  <label class="form-check-label" for="consentCheck" style="font-size: 14px;">
-						I authorize company representatives to Call, SMS, Email or WhatsApp me...
-					  </label>
+						<input class="form-check-input" type="checkbox" id="consentCheck" checked disabled>
+						<label class="form-check-label" for="consentCheck" style="font-size: 14px;">
+							I authorize company representatives to Call, SMS, Email or WhatsApp me...
+						</label>
 					</div>
-				  
+
 					<button type="submit" class="submit-btn w-100">Submit</button>
-				  </form>
-				  
+				</form>
+
 				<!-- Hidden iframe to prevent page refresh -->
 				<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
 					onload="if(submitted) {window.setTimeout(function(){alert('Thank you!'); document.getElementById('contactForm').reset(); document.getElementById('contactOverlay').classList.remove('show');}, 100);}"></iframe>
