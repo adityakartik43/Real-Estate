@@ -244,38 +244,93 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 
 .welcome-hero {
     position: relative;
-    background:url(../images/welcome-hero/banner.jpg)no-repeat;
-    background-position:center;
-    background-size:cover;
+    background: url(../images/welcome-hero/banner.jpg) no-repeat center center/cover;
     text-align: center;
-    height:650px;
+    min-height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
     z-index: 1;
-}
-.welcome-hero:before{
+    box-sizing: border-box;
+  }
+  
+  .welcome-hero:before {
     position: absolute;
     content: " ";
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background:rgba(65,73,89,.65);
+    background: rgba(65, 73, 89, 0.65);
     z-index: -1;
-}
-.welcome-hero-txt { padding-top: 155px;}
-
-.welcome-hero-txt h2 {
+  }
+  
+  .welcome-hero-txt {
+    padding-top: 155px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .welcome-hero-txt h2 {
     font-size: 48px;
     color: #fff;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2.4px;
     line-height: 1.4;
-}
-.welcome-hero-txt p {
+  }
+  
+  .welcome-hero-txt p {
     font-size: 18px;
     color: #fcfcfc;
     margin-top: 25px;
-}
+    padding: 0 15px;
+  }
+  
+  /* Responsive Tweaks */
+  @media (max-width: 992px) {
+    .welcome-hero {
+      padding: 40px 15px;
+      min-height: 550px;
+    }
+  
+    .welcome-hero-txt {
+      padding-top: 120px;
+    }
+  
+    .welcome-hero-txt h2 {
+      font-size: 36px;
+      letter-spacing: 1.5px;
+    }
+  
+    .welcome-hero-txt p {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .welcome-hero {
+      min-height: 480px;
+      padding: 30px 10px;
+    }
+  
+    .welcome-hero-txt {
+      padding-top: 100px;
+    }
+  
+    .welcome-hero-txt h2 {
+      font-size: 28px;
+      letter-spacing: 1px;
+    }
+  
+    .welcome-hero-txt p {
+      font-size: 15px;
+      margin-top: 15px;
+    }
+  }
+  
 
 
 
