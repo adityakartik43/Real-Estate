@@ -287,12 +287,14 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
     border-radius: 8px;
     max-width: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
 }
 
 .enquiry-form-container h2 {
     margin-bottom: 15px;
     font-size: 24px;
     color: #333;
+    text-align: center;
 }
 
 .enquiry-form {
@@ -300,6 +302,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
     flex-wrap: wrap;
     gap: 15px;
     align-items: center;
+    justify-content: center;
 }
 
 .enquiry-form input[type="text"],
@@ -310,6 +313,8 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .enquiry-form button {
@@ -322,6 +327,8 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
     border-radius: 6px;
     cursor: pointer;
     transition: background 0.3s ease;
+    width: 100%;
+    max-width: 180px;
 }
 
 .enquiry-form button:hover {
@@ -332,11 +339,43 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
     margin-top: 10px;
     font-size: 13px;
     color: #333;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .consent-box input[type="checkbox"] {
     margin-right: 6px;
     vertical-align: middle;
+}
+
+/* Responsive Styles */
+@media (max-width: 100px) {
+    .enquiry-form-container {
+        padding: 15px 20px;
+    }
+
+    .enquiry-form-container h2 {
+        font-size: 20px;
+    }
+
+    .enquiry-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .enquiry-form input[type="text"],
+    .enquiry-form input[type="email"],
+    .enquiry-form input[type="tel"],
+    .enquiry-form button {
+        width: 100%;
+    }
+
+    .consent-box {
+        font-size: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 
