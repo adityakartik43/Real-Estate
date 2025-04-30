@@ -391,7 +391,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
   #projects .btn {
     border-radius: 20px;
   }
-
+  
   .projects-section {
     padding: 50px 20px;
     text-align: center;
@@ -454,6 +454,58 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
     font-weight: 600;
   }
   
+  /* Responsive Styles */
+  @media (max-width: 992px) {
+    .projects-section h2 {
+      font-size: 3.5rem;
+      line-height: 1.5;
+    }
+  
+    .project-card {
+      width: 240px;
+    }
+  
+    .project-card img {
+      height: 160px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .projects-section h2 {
+      font-size: 2.8rem;
+      margin-bottom: 30px;
+    }
+  
+    .project-card {
+      width: 100%;
+      max-width: 350px;
+    }
+  
+    .projects-container {
+      gap: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .projects-section {
+      padding: 40px 10px;
+    }
+  
+    .projects-section h2 {
+      font-size: 2.2rem;
+    }
+  
+    .project-info h3 {
+      font-size: 16px;
+    }
+  
+    .project-info p,
+    .project-info strong {
+      font-size: 14px;
+    }
+  }
+  
+  
   .price {
     color: #e53935;
     font-weight: bold;
@@ -478,9 +530,12 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
     font-size: 5rem;
     color: #c62828;
     line-height: 2;
+    text-align: center;
   }
+  
   #omorfos-launch h5 {
     margin-top: 10rem;
+    text-align: center;
   }
   
   #omorfos-launch p {
@@ -489,8 +544,44 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
     margin-top: 2rem;
     font-size: 1.5rem;
     line-height: 2;
-
+    padding: 0 1rem;
+    text-align: center;
   }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    #omorfos-launch h1 {
+      font-size: 3rem;
+      line-height: 1.4;
+    }
+  
+    #omorfos-launch h5 {
+      margin-top: 5rem;
+      font-size: 1.2rem;
+    }
+  
+    #omorfos-launch p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #omorfos-launch h1 {
+      font-size: 2.2rem;
+    }
+  
+    #omorfos-launch h5 {
+      margin-top: 3rem;
+      font-size: 1rem;
+    }
+  
+    #omorfos-launch p {
+      font-size: 1rem;
+      padding: 0 0.8rem;
+    }
+  }
+  
 
 
 /* Highlights styling */
@@ -1096,46 +1187,94 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 /*-------------------------------------       
         9.  Counter
 --------------------------------------*/
-.statistics{
-    position:relative;
+.statistics {
+    position: relative;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    background:url(../../assets/images/counter/counter-banner.jpg)no-repeat fixed;
-    background-position:center;
-    background-size:cover;
-    padding:127px 0 120px;
-}
-.statistics:before{
-    position:absolute;
-    content:'';
-    background: rgba(75,75,75,.60);
-    height:100%;
-    width:100%;
-    top:0;
-    left:0;
-}
-/* single-ststistics-box */
-.single-ststistics-box {
+    background: url(../../assets/images/counter/counter-banner.jpg) no-repeat fixed center/cover;
+    padding: 127px 0 120px;
     text-align: center;
-    margin-bottom:30px;
-
+    box-sizing: border-box;
 }
-/* single-ststistics-box */
-.statistics-content{
+
+.statistics:before {
+    position: absolute;
+    content: '';
+    background: rgba(75, 75, 75, 0.60);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Ensure content appears above overlay */
+.single-ststistics-box {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin: 20px;
+    flex: 1 1 200px;
+}
+
+/* Statistics number styling */
+.statistics-content {
     display: flex;
     justify-content: center;
-    color:#fff;
-    font-size:60px;
+    align-items: center;
+    color: #fff;
+    font-size: 60px;
+    margin-bottom: 10px;
 }
+
 .statistics-content span {
     margin-left: 5px;
 }
-.single-ststistics-box h3{
-    color:#fff;
-    font-size:24px;
-    text-transform:capitalize;
+
+/* Label/text under number */
+.single-ststistics-box h3 {
+    color: #fff;
+    font-size: 24px;
+    text-transform: capitalize;
     font-weight: 500;
 }
+
+/* Responsive styling */
+@media (max-width: 992px) {
+    .statistics {
+        padding: 100px 20px;
+        flex-direction: column;
+    }
+
+    .statistics-content {
+        font-size: 40px;
+    }
+
+    .single-ststistics-box h3 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .statistics {
+        padding: 80px 15px;
+    }
+
+    .statistics-content {
+        font-size: 32px;
+    }
+
+    .single-ststistics-box {
+        margin: 15px 0;
+    }
+
+    .single-ststistics-box h3 {
+        font-size: 18px;
+    }
+}
+
 
 /*-------------------------------------
         10. Blog
