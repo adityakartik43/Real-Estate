@@ -1003,6 +1003,161 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
   }
 }
 
+
+/*-------------------------------------
+        Founders Section (Non-Card View - Increased Font Sizes)
+--------------------------------------*/
+.founders-section {
+    padding-top: 60px;
+    padding-bottom: 30px;
+    background-color: #f8f9fa; /* Light background, adjust as needed */
+}
+
+/* Section Title and Subtitle */
+.founders-section .text-center h5.text-secondary { /* More specific selector */
+    font-size: 1.7rem !important; /* Increased */
+    font-weight: 600; /* Bootstrap fw-semibold equivalent */
+}
+
+.founders-section .text-center h1.display-5 { /* More specific selector */
+    font-size: 3.5rem !important; /* Increased */
+    font-weight: 700; /* Bootstrap fw-bold equivalent */
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+
+.founder-item {
+    /* mb-5 in HTML handles spacing between items */
+}
+
+.founder-img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border: 3px solid #dee2e6;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.founder-details {
+    /* Text alignment will be handled by Bootstrap text-md-start or text-center on parent */
+}
+
+.founder-name {
+    font-size: 2.3rem; /* Increased */
+    color: #343a40;
+    margin-bottom: 0.3rem;
+    font-weight: 700; /* Bootstrap fw-bold */
+}
+
+.founder-title {
+    font-size: 1.25rem; /* Increased */
+    color: #495057;
+    margin-bottom: 1.1rem; /* Adjusted margin */
+    font-style: italic;
+}
+
+.founder-bio {
+    font-size: 1.1rem; /* Increased */
+    color: #555;
+    line-height: 1.75; /* Slightly increased line-height for better readability */
+    text-align: justify;
+}
+
+/* Responsive adjustments for Founders Section (Non-Card View - Increased Font Sizes) */
+
+@media (max-width: 991px) { /* Medium devices (tablets, less than 992px) */
+    .founders-section .text-center h1.display-5 {
+        font-size: 2.8rem !important; /* Increased */
+    }
+    .founders-section .text-center h5.text-secondary {
+        font-size: 1.5rem !important; /* Increased */
+    }
+
+    .founder-name {
+        font-size: 2rem; /* Increased */
+    }
+    .founder-title {
+        font-size: 1.15rem; /* Increased */
+    }
+    .founder-bio {
+        font-size: 1rem; /* Increased */
+    }
+    .founder-img {
+        width: 160px; /* Slightly increased for proportion */
+        height: 160px;
+    }
+}
+
+@media (max-width: 767px) { /* Small devices (landscape phones, less than 768px) */
+    .founders-section .text-center h1.display-5 {
+        font-size: 2.6rem !important; /* Increased */
+    }
+    .founders-section .text-center h5.text-secondary {
+        font-size: 1.35rem !important; /* Increased */
+    }
+
+    .founder-item {
+        text-align: center;
+    }
+
+    .founder-img {
+        width: 170px; /* Increased */
+        height: 170px;
+        margin-bottom: 20px; /* Adjusted margin */
+    }
+
+    .founder-details {
+        text-align: center;
+    }
+
+    .founder-name {
+        font-size: 1.9rem; /* Increased */
+    }
+
+    .founder-title {
+        font-size: 1.1rem; /* Increased */
+    }
+
+    .founder-bio {
+        font-size: 0.95rem; /* Slightly smaller here for small screens, but still up from before */
+        text-align: center;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 575px) { /* Extra small devices (portrait phones, less than 576px) */
+    .founders-section .text-center h1.display-5 {
+        font-size: 2.3rem !important; /* Increased */
+    }
+    .founders-section .text-center h5.text-secondary {
+        font-size: 1.25rem !important; /* Increased */
+    }
+    .founder-name {
+        font-size: 1.75rem; /* Increased */
+    }
+    .founder-title {
+        font-size: 1.05rem; /* Increased */
+    }
+    .founder-bio {
+        font-size: 0.9rem;
+    }
+     .founder-img {
+        width: 150px; /* Adjusted */
+        height: 150px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
   
   
 
