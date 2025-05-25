@@ -823,8 +823,8 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
     right: 10px;
     width: 32px;
     height: 32px;
-    background-color: #e74c3c;
-    color: white;
+    background-color: #e74c3c; /* Red background */
+    color: white;              /* This SHOULD make the '×' white */
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -832,6 +832,14 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
     cursor: pointer;
     border: none;
     z-index: 10;
+    font-size: 22px;
+    font-weight: semobold;
+    line-height: 1;
+}
+
+.overlay .popup-modal button.close-btn { /* More specific */
+    /* ... your other styles ... */
+    color: white !important;
 }
 
 .popup-content {
@@ -1061,7 +1069,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 }
 
 .founder-bio {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: #555;
     line-height: 1.75;
     text-align: justify;
@@ -1155,15 +1163,6 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 
 
 
-
-
-
-
-
-
-
-  
-  
 
 /* ---------------------------------------------------------- */
 
