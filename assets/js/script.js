@@ -139,3 +139,31 @@ if (contactForm) {
 }
 
 
+document.addEventListener("DOMContentLoaded", function() {
+  const lightboxOverlay = document.getElementById("lightbox-overlay");
+  const lightboxImage = document.querySelector(".lightbox-image");
+  const lightboxClose = document.querySelector(".lightbox-close");
+  const lightboxLinks = document.querySelectorAll(".lightbox");
+
+  lightboxLinks.forEach(link => {
+    link.addEventListener("click", function(e) {
+      e.preventDefault();
+      const imgSrc = this.getAttribute("href");
+      lightboxImage.src = imgSrc;
+      lightboxOverlay.style.display = "flex";
+    });
+  });
+
+  lightboxClose.addEventListener("click", function() {
+    lightboxOverlay.style.display = "none";
+  });
+
+  lightboxOverlay.addEventListener("click", function(e) {
+    if (e.target === lightboxOverlay) {
+      lightboxOverlay.style.display = "none";
+    }
+  });
+});
+
+
+

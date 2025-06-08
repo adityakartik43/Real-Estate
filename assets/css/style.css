@@ -238,6 +238,10 @@ nav.navbar.bootsnav .navbar-toggle {
 nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 /*.navbar-toggle */
 
+
+
+
+
 /*-------------------------------------
         4.  Welcome-hero
 --------------------------------------*/
@@ -435,130 +439,271 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 
 
 
+.project-section {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+}
 
+.section-label {
+  font-size: 1.7rem;
+  color: #6c757d;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
 
+.section-title {
+  font-size: 3.3rem;
+  color: #dc3545;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
 
+.project-title {
+  font-size: 2.3rem;
+  color: #343a40;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
 
-#projects .card-title {
+.section-subtitle {
+  font-size: 1.5rem;
+  color: #495057;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.project-description {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.7;
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+
+.project-features {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  padding-left: 1rem;
+}
+
+.project-features ul {
+  list-style-type: circle;
+  margin-left: 1rem;
+}
+
+.project-features li {
+  margin-bottom: 0.4rem;
+}
+
+img.img-fluid {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  .section-title {
+    font-size: 2.8rem;
+  }
+  .project-title {
+    font-size: 2rem;
+    margin-top: 2rem;
+  }
+  .section-subtitle {
+    font-size: 1.3rem;
+  }
+  .project-description {
     font-size: 1.1rem;
   }
-  
-  #projects .btn {
-    border-radius: 20px;
+}
+
+@media (max-width: 767px) {
+  .project-section {
+    padding: 40px 0;
   }
-  
-  .projects-section {
-    padding: 50px 20px;
-    text-align: center;
-    margin-top: 3rem;
+  .section-title {
+    font-size: 2.5rem;
   }
-  
-  .projects-section h2 {
-    font-size: 5rem;
-    color: #c62828;
-    margin-bottom: 40px;
-    font-weight: bold;
-    line-height: 2;
+  .section-label {
+    font-size: 1.4rem;
   }
-  
-  .projects-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
+  .project-title {
+    font-size: 1.8rem;
   }
-  
-  .project-card {
-    width: 280px;
-    background: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
+  .section-subtitle {
+    font-size: 1.2rem;
   }
-  
-  .project-card:hover {
-    transform: translateY(-5px);
+  .project-description,
+  .project-features {
+    font-size: 1rem;
   }
-  
-  .project-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
+}
+
+@media (max-width: 575px) {
+  .section-title {
+    font-size: 2.2rem;
   }
-  
-  .project-info {
-    padding: 15px;
+  .section-label {
+    font-size: 1.3rem;
   }
-  
-  .project-info h3 {
-    margin: 0;
-    font-size: 18px;
-    color: #000;
+  .project-title {
+    font-size: 1.7rem;
   }
-  
-  .project-info p {
-    margin: 5px 0;
-    color: #666;
+  .section-subtitle {
+    font-size: 1.1rem;
   }
-  
-  .project-info strong {
-    display: block;
-    margin: 10px 0;
-    color: #000;
-    font-weight: 600;
+}
+
+
+
+
+
+.gallery-plans-section {
+  padding: 60px 0;
+  background-color: #fff;
+}
+
+.section-label {
+  font-size: 2.5rem;
+  color: #6c757d;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 3rem;
+  color: #dc3545;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.section-description {
+  font-size: 1.3rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.gallery-category {
+  margin-bottom: 3rem;
+}
+
+.category-title {
+  font-size: 1.8rem;
+  color: #343a40;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.category-description {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.floor-plan-list {
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+.floor-plan-list li {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.floor-plan-list a {
+  color: #dc3545;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.floor-plan-list a:hover {
+  color: #a71d2a;
+}
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.gallery-img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+
+  .image-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Decrease min-width for mobile */
   }
-  
-  /* Responsive Styles */
-  @media (max-width: 992px) {
-    .projects-section h2 {
-      font-size: 3.5rem;
-      line-height: 1.5;
-    }
-  
-    .project-card {
-      width: 240px;
-    }
-  
-    .project-card img {
-      height: 160px;
-    }
+
+  .gallery-img {
+    height: 180px; /* Set fixed height for images on mobile */
+    object-fit: cover; /* Crops images to fill without distortion */
   }
-  
-  @media (max-width: 768px) {
-    .projects-section h2 {
-      font-size: 2.8rem;
-      margin-bottom: 30px;
-    }
-  
-    .project-card {
-      width: 100%;
-      max-width: 350px;
-    }
-  
-    .projects-container {
-      gap: 20px;
-    }
+
+  .section-title {
+    font-size: 2.5rem;
   }
-  
-  @media (max-width: 480px) {
-    .projects-section {
-      padding: 40px 10px;
-    }
-  
-    .projects-section h2 {
-      font-size: 2.2rem;
-    }
-  
-    .project-info h3 {
-      font-size: 16px;
-    }
-  
-    .project-info p,
-    .project-info strong {
-      font-size: 14px;
-    }
+  .section-label {
+    font-size: 1.4rem;
   }
+  .category-title {
+    font-size: 1.6rem;
+  }
+  .category-description,
+  .floor-plan-list li {
+    font-size: 1rem;
+  }
+}
+
+
+
+/* Lightbox overlay styling */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: none; /* Hidden by default */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.lightbox-overlay img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 8px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: #fff;
+  font-size: 3rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+
   
   
   .price {
@@ -582,7 +727,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
   }
 
   #omorfos-launch h1 {
-    font-size: 5rem;
+    font-size: 4.2rem;
     color: #c62828;
     line-height: 2;
     text-align: center;
@@ -614,6 +759,9 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
       margin-top: 5rem;
       font-size: 1.2rem;
     }
+    #omorfos-launch h6 {
+      font-size: 1.4rem;
+    }
   
     #omorfos-launch p {
       font-size: 1.2rem;
@@ -624,11 +772,11 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
   @media (max-width: 480px) {
     #omorfos-launch h1 {
       font-size: 2.2rem;
+      margin-top: 1rem;
     }
   
     #omorfos-launch h5 {
       margin-top: 3rem;
-      font-size: 1rem;
     }
   
     #omorfos-launch p {
@@ -662,43 +810,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 
 
 
-  #amenities {
-    background-color: #fdf9ef;
-    padding-top: 5rem;
-    padding-left: 10rem;
-    padding-right: 10rem;
-    padding-bottom: 10rem;
-  }
   
-  .amenity-icon {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 10px;
-    object-fit: contain;
-  }
-  
-  #amenities p {
-    font-weight: 500;
-    color: #222;
-    margin-bottom: 3rem;
-  }
-  
-
-  #floor-plans img {
-    transition: transform 0.3s ease;
-    max-height: 250px;
-    object-fit: cover;
-  }
-  
-  .floor-plan-card:hover img {
-    transform: scale(1.05);
-  }
-  
-  #floor-plans .btn {
-    padding: 0.5rem 1.5rem;
-    font-weight: bold;
-    border-radius: 5px;
-  }
   
   #floor-plans p {
     font-size: 1rem;
@@ -752,7 +864,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
     }
     
     .gallery-img {
-        height: 200px;
+        height: 100px;
     }
 }
 
