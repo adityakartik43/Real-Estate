@@ -647,7 +647,7 @@ img.img-fluid {
 @media (max-width: 767px) {
 
   .image-gallery {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Decrease min-width for mobile */
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Decrease min-width for mobile */
   }
 
   .gallery-img {
@@ -669,6 +669,12 @@ img.img-fluid {
     font-size: 1rem;
   }
 }
+
+@media (max-width: 480px) {
+  .image-gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  }
+
 
 
 
