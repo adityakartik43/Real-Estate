@@ -670,10 +670,10 @@ img.img-fluid {
   }
 }
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .image-gallery {
     grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  }
+  } */
 
 
 
@@ -1906,4 +1906,43 @@ img.img-fluid {
     0%   {bottom:0px;}
     100%  {bottom:7px;}
 }
-}
+
+
+Add commentMore actions
+  #amenities {
+    background-color: #fdf9ef;
+    padding-top: 5rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    padding-bottom: 10rem;
+  }
+
+  .amenity-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    object-fit: contain;
+  }
+  
+  #amenities p {
+    font-weight: 500;
+    color: #222;
+    margin-bottom: 3rem;
+  }
+  
+
+  #floor-plans img {
+    transition: transform 0.3s ease;
+    max-height: 250px;
+    object-fit: cover;
+  }
+  
+  .floor-plan-card:hover img {
+    transform: scale(1.05);
+  }
+  
+  #floor-plans .btn {
+    padding: 0.5rem 1.5rem;
+    font-weight: bold;
+    border-radius: 5px;
+  }
