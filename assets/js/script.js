@@ -63,7 +63,7 @@ if (contactForm) {
         const formData = new FormData(contactForm);
 
         const now = new Date();
-        const timestamp = now.toLocaleString(); // e.g., "4/30/2025, 2:15:30 PM"
+        const timestamp = "'" + new Date().toLocaleString(); // e.g., "4/30/2025, 2:15:30 PM"
 
         const data = {
             data: {
@@ -104,7 +104,7 @@ if (contactForm) {
       e.preventDefault();
 
       const formData = new FormData(enquiryForm);
-      const timestamp = new Date().toLocaleString(); // Add timestamp
+      const timestamp = "'" + new Date().toLocaleString(); // Add timestamp
 
       const data = {
         data: {
