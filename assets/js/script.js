@@ -1,169 +1,143 @@
-// Get DOM elements
-const contactOverlay = document.getElementById('contactOverlay');
-const closeBtn = document.getElementById('closeBtn');
-const contactForm = document.getElementById('contactForm');
-const contactUsBtn = document.getElementById('contactUsBtn');
-const enquiryForm = document.getElementById('enquiryForm');
-
-// Show the popup
-function showPopup() {
-    contactOverlay.classList.add('show');
-    document.body.style.overflow = 'hidden';
-}
-
-// Hide the popup
-function hidePopup() {
-    contactOverlay.classList.remove('show');
-    document.body.style.overflow = 'auto';
-}
-
-// Show popup on button click
-if (contactUsBtn) {
-    contactUsBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        showPopup();
-    });
-}
-
-// Hide popup on close button
-if (closeBtn) {
-    closeBtn.addEventListener('click', hidePopup);
-}
-
-// Hide popup when clicking outside the modal
-if (contactOverlay) {
-    contactOverlay.addEventListener('click', function (e) {
-        if (e.target === contactOverlay) {
-            hidePopup();
-        }
-    });
-}
-
-
-  // Wait until the DOM is fully loaded
-  document.addEventListener("DOMContentLoaded", function() {
-    // Select all buttons with class 'interested-btn'
-    const buttons = document.querySelectorAll(".interested-btn");
-    
-    // Loop through each button and add click event
-    buttons.forEach(button => {
-      button.addEventListener("click", function(e) {
-        e.preventDefault();
-        showPopup();
-      });
-    });
-  });
-
-
-// Form submission using fetch and SheetDB API
-if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        const formData = new FormData(contactForm);
-
-        const now = new Date();
-        const timestamp = "'" + new Date().toLocaleString(); // e.g., "4/30/2025, 2:15:30 PM"
-
-        const data = {
-            data: {
-                "Name": formData.get('data[Name]'),
-                "Phone number": formData.get('data[Phone number]'),
-                "Email": formData.get('data[Email]'),
-                "Message": formData.get('data[Message]'),
-                "Timestamp": timestamp
-            }
-        };
-
-        fetch('https://sheetdb.io/api/v1/g2b68ikbx5ybs', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-        .then(response => {
-            if (response.ok) {
-                alert('Thank you! Your response has been submitted.');
-                contactForm.reset();
-                hidePopup();
-            } else {
-                alert('Something went wrong. Please try again.');
-            }
-        })
-        .catch(error => {
-            console.error('Error submitting form:', error);
-            alert('Error submitting form. Please try again later.');
-        });
-    });
-}
-
-
-  if (enquiryForm) {
-    enquiryForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      const formData = new FormData(enquiryForm);
-      const timestamp = "'" + new Date().toLocaleString(); // Add timestamp
-
-      const data = {
-        data: {
-          "Name": formData.get('Name'),
-          "Email": formData.get('Email'),
-          "Phone number": formData.get('Phone number'),
-          "Message": formData.get('Message'),
-          "Timestamp": timestamp
-        }
-      };
-
-      fetch('https://sheetdb.io/api/v1/g2b68ikbx5ybs', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      })
-      .then(response => {
-        if (response.ok) {
-          alert("Thank you! Your enquiry has been submitted.");
-          enquiryForm.reset();
-        } else {
-          alert("Something went wrong. Please try again.");
-        }
-      })
-      .catch(error => {
-        console.error("Error:", error);
-        alert("Network error. Please try again later.");
-      });
-    });
-}
-
-
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
+  // Elements
+  const contactOverlay = document.getElementById("contactOverlay");
+  const closeBtn = document.getElementById("closeBtn");
+  const contactForm = document.getElementById("contactForm");
+  const contactUsBtn = document.getElementById("contactUsBtn");
+  const enquiryForm = document.getElementById("enquiryForm");
   const lightboxOverlay = document.getElementById("lightbox-overlay");
   const lightboxImage = document.querySelector(".lightbox-image");
   const lightboxClose = document.querySelector(".lightbox-close");
   const lightboxLinks = document.querySelectorAll(".lightbox");
+  const interestedButtons = document.querySelectorAll(".interested-btn");
 
-  lightboxLinks.forEach(link => {
-    link.addEventListener("click", function(e) {
+  // Show popup
+  function showPopup() {
+    contactOverlay.classList.add("show");
+    document.body.style.overflow = "hidden";
+  }
+
+  // Hide popup
+  function hidePopup() {
+    contactOverlay.classList.remove("show");
+    document.body.style.overflow = "auto";
+  }
+
+  // Event Listeners
+  if (contactUsBtn) {
+    contactUsBtn.addEventListener("click", function (e) {
       e.preventDefault();
-      const imgSrc = this.getAttribute("href");
-      lightboxImage.src = imgSrc;
+      showPopup();
+    });
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", hidePopup);
+  }
+
+  if (contactOverlay) {
+    contactOverlay.addEventListener("click", function (e) {
+      if (e.target === contactOverlay) {
+        hidePopup();
+      }
+    });
+  }
+
+  // Interested buttons trigger popup
+  interestedButtons.forEach((button) => {
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+      showPopup();
+    });
+  });
+
+  // Form submission function
+  function handleFormSubmission(form, getFieldName) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const timestamp = "'" + new Date().toLocaleString();
+
+      const name = formData.get(getFieldName("Name"))?.trim();
+      const email = formData.get(getFieldName("Email"))?.trim();
+      const phone = formData.get(getFieldName("Phone number"))?.trim();
+      const message = formData.get(getFieldName("Message"))?.trim();
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const phonePattern = /^[6-9]\d{9}$/;
+
+      if (!name || !email || !phone || !message) {
+        alert("Please fill all the fields.");
+        return;
+      }
+
+      if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+      }
+
+      if (!phonePattern.test(phone)) {
+        alert("Please enter a valid 10-digit phone number.");
+        return;
+      }
+
+      const data = {
+        data: {
+          Name: name,
+          "Phone number": phone,
+          Email: email,
+          Message: message,
+          Timestamp: timestamp,
+        },
+      };
+
+      fetch("https://sheetdb.io/api/v1/g2b68ikbx5ybs", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((response) => {
+          if (response.ok) {
+            alert("Thank you! Your response has been submitted.");
+            form.reset();
+            if (form === contactForm) hidePopup();
+          } else {
+            alert("Something went wrong. Please try again.");
+          }
+        })
+        .catch((error) => {
+          console.error("Error submitting form:", error);
+          alert("Error submitting form. Please try again later.");
+        });
+    });
+  }
+
+  if (contactForm) {
+    handleFormSubmission(contactForm, (name) => `data[${name}]`);
+  }
+
+  if (enquiryForm) {
+    handleFormSubmission(enquiryForm, (name) => name);
+  }
+
+  // Lightbox functionality
+  lightboxLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      lightboxImage.src = this.getAttribute("href");
       lightboxOverlay.style.display = "flex";
     });
   });
 
-  lightboxClose.addEventListener("click", function() {
+  lightboxClose?.addEventListener("click", function () {
     lightboxOverlay.style.display = "none";
   });
 
-  lightboxOverlay.addEventListener("click", function(e) {
+  lightboxOverlay?.addEventListener("click", function (e) {
     if (e.target === lightboxOverlay) {
       lightboxOverlay.style.display = "none";
     }
   });
 });
-
-
-
